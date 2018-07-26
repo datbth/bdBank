@@ -111,6 +111,7 @@ class bdBank_DevHelper_Config extends DevHelper_Config_Base
         ),
         'xf_bdbank_archive' => array(
             'index::transfered' => array('index' => true, 'fields' => array('transfered'), 'name' => 'transfered', 'type' => 'NORMAL'),
+            'index::to_user_id' => array('index' => true, 'fields' => array('to_user_id'), 'name' => 'to_user_id', 'type' => 'NORMAL'),
         ),
     );
     protected $_exportPath = '/Users/sondh/XenForo/bdBank';

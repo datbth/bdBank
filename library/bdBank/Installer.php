@@ -47,6 +47,7 @@ class bdBank_Installer
                 , PRIMARY KEY (`transaction_id`)
                 ,INDEX `comment` (`comment`)
                 ,INDEX `transfered` (`transfered`)
+                ,INDEX `to_user_id` (`to_user_id`)
             ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;',
             'dropQuery' => 'DROP TABLE IF EXISTS `xf_bdbank_archive`',
         ),
@@ -121,6 +122,14 @@ class bdBank_Installer
             'checkQuery' => 'SHOW INDEXES FROM `xf_bdbank_archive` WHERE Key_name LIKE \'transfered\'',
             'addQuery' => 'ALTER TABLE `xf_bdbank_archive` ADD INDEX `transfered` (`transfered`)',
             'dropQuery' => 'ALTER TABLE `xf_bdbank_archive` DROP INDEX `transfered`',
+        ),
+        array(
+            'table' => 'xf_bdbank_archive',
+            'tableCheckQuery' => 'SHOW TABLES LIKE \'xf_bdbank_archive\'',
+            'index' => 'to_user_id',
+            'checkQuery' => 'SHOW INDEXES FROM `xf_bdbank_archive` WHERE Key_name LIKE \'to_user_id\'',
+            'addQuery' => 'ALTER TABLE `xf_bdbank_archive` ADD INDEX `to_user_id` (`to_user_id`)',
+            'dropQuery' => 'ALTER TABLE `xf_bdbank_archive` DROP INDEX `to_user_id`',
         ),
     );
 
